@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>i</title>
+  <link rel="icon" href="https://fav.farm/❄️" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
+<style>
+  /* Content section */
+  .montaga-regular {
+  font-family: "Montaga", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* Frozen overlay styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top of everything */
+    
+    font-size: 24px;
+}
+
+.overlay .message {
+    text-align: center;
+}
+
+.overlay button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+<div class="montaga-regular" style="z-index: 1000; position: absolute; left: 15px; right: 15px;">
+  <h1 style="z-index: 1000;">
+    Stuck between a rock and a hard place (1 Sam 23:13-29):
+  </h1>
+  <h3>
+    Then David and his men, which were about six hundred, arose and departed out of Keilah, and went whithersoever they could go. And it was told Saul that David was escaped from Keilah; and he forbare to go forth. 14 And David abode in the wilderness in strong holds, and remained in a mountain in the wilderness of Ziph. And Saul sought him every day, but God delivered him not into his hand. 15 And David saw that Saul was come out to seek his life: and David was in the wilderness of Ziph in a wood.
+16 ¶ And Jonathan Saul’s son arose, and went to David into the wood, and strengthened his hand in God. 17 And he said unto him, Fear not: for the hand of Saul my father shall not find thee; and thou shalt be king over Israel, and I shall be next unto thee; and that also Saul my father knoweth. 18 And they two made a covenant before the LORD: and David abode in the wood, and Jonathan went to his house.
+19 ¶ Then came up the Ziphites to Saul to Gibeah, saying, Doth not David hide himself with us in strong holds in the wood, in the hill of Hachilah, which is on the south of Jeshimon? 20 Now therefore, O king, come down according to all the desire of thy soul to come down; and our part shall be to deliver him into the king’s hand. 21 And Saul said, Blessed be ye of the LORD; for ye have compassion on me. 22 Go, I pray you, prepare yet, and know and see his place where his haunt is, and who hath seen him there: for it is told me that he dealeth very subtilly. 23 See therefore, and take knowledge of all the lurking places where he hideth himself, and come ye again to me with the certainty, and I will go with you: and it shall come to pass, if he be in the land, that I will search him out throughout all the thousands of Judah. 24 And they arose, and went to Ziph before Saul: but David and his men were in the wilderness of Maon, in the plain on the south of Jeshimon. 25 Saul also and his men went to seek him. And they told David: wherefore he came down into a rock, and abode in the wilderness of Maon. And when Saul heard that, he pursued after David in the wilderness of Maon. 26 And Saul went on this side of the mountain, and David and his men on that side of the mountain: and David made haste to get away for fear of Saul; for Saul and his men compassed David and his men round about to take them.
+27 ¶ But there came a messenger unto Saul, saying, Haste thee, and come; for the Philistines have invaded the land. 28 Wherefore Saul returned from pursuing after David, and went against the Philistines: therefore they called that place Sela–hammahlekoth.
+29 ¶ And David went up from thence, and dwelt in strong holds at En–gedi.
+  </h3>
+</div>
+  <button class="toggle" style="position: absolute; top: 50px; bottom: 500px; right: 500px; left: 500px;">
+  <svg class="toggle__icon" xmlns="http://www.w3.org/2000/svg" width="14.2" height="22.2" viewBox="0 0 14.2 22.2">
+    <g fill="none" stroke-width="3" stroke-miterlimit="10">
+      <path stroke="#fff" class="dot" stroke-dasharray="30 50" stroke-dashoffset="-14" d="M7 7.5V5C7 2.2 4.7.6 2.8 2c-2 1.3-1.2 3.5-.2 4.5l9.2 9.2"/>
+      <path stroke="#fff" class="stroke" stroke-dasharray="30 50" stroke-dashoffset="-19.5" d="M7 9v8.3c0 2.8-2.5 4-4 3-2-1.2-1.8-3.3-.5-4.6l9.2-9.2"/>
+    </g>
+  </svg>
+  </span>INFO</span>
+</button>
+</div>
+
+<div id="frozenOverlay" class="overlay">
+  <div class="message">
+      <p></p>
+      <button class="montaga-regular" style="position: absolute; top: 0px; left: 0px; background-color: white; border: none;" onclick="unfreezeScreen()">HAVE YOU EVER FELT STUCK?</button>
+  </div>
+</div>
+<!-- partial -->
+  <script  src="./script.js"></script>
+  <script>
+    // Disable scrolling by preventing default behavior for scroll-related events
+    function disableScroll() {
+        window.addEventListener('scroll', preventScroll, { passive: false });
+        window.addEventListener('wheel', preventScroll, { passive: false });
+        window.addEventListener('touchmove', preventScroll, { passive: false });
+        window.addEventListener('keydown', preventScrollKeys, { passive: false });
+    }
+
+    function enableScroll() {
+        window.removeEventListener('scroll', preventScroll);
+        window.removeEventListener('wheel', preventScroll);
+        window.removeEventListener('touchmove', preventScroll);
+        window.removeEventListener('keydown', preventScrollKeys);
+    }
+
+    function preventScroll(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+    }
+
+    function preventScrollKeys(e) {
+        // Disable scrolling for arrow keys, spacebar, and page navigation keys
+        if (['ArrowUp', 'ArrowDown', 'Space', 'PageUp', 'PageDown', 'Home', 'End'].includes(e.code)) {
+            e.preventDefault();
+            return false;
+        }
+    }
+    // Function to unfreeze the screen
+function unfreezeScreen() {
+const overlay = document.getElementById('frozenOverlay');
+overlay.style.display = 'none'; // Hide the overlay
+console.log("Unfreeze button clicked, overlay should disappear.");
+}
+
+
+
+</script>
+</body>
+</html>
